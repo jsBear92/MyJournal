@@ -344,6 +344,8 @@
                                             <constraints>
                                                 <constraint firstItem="oEF-9C-U9t" firstAttribute="centerX" secondItem="Ot5-Hf-j2k" secondAttribute="centerX" id="3EF-Ey-uOp"/>
                                                 <constraint firstItem="oEF-9C-U9t" firstAttribute="centerY" secondItem="Ot5-Hf-j2k" secondAttribute="centerY" id="K41-kl-UeT"/>
+                                                <constraint firstItem="oEF-9C-U9t" firstAttribute="centerX" secondItem="Ot5-Hf-j2k" secondAttribute="centerX" id="Yhe-Te-T1i"/>
+                                                <constraint firstItem="oEF-9C-U9t" firstAttribute="centerY" secondItem="Ot5-Hf-j2k" secondAttribute="centerY" id="gMq-Co-Vsd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
