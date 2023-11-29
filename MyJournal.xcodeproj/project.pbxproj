@@ -13,6 +13,8 @@
 		C8ED8E092B173F490050EB8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ED8E072B173F490050EB8A /* Main.storyboard */; };
 		C8ED8E0B2B173F4B0050EB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ED8E0A2B173F4B0050EB8A /* Assets.xcassets */; };
 		C8ED8E0E2B173F4B0050EB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ED8E0C2B173F4B0050EB8A /* LaunchScreen.storyboard */; };
+		C8ED8E1C2B177F9D0050EB8A /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E1B2B177F9D0050EB8A /* JournalEntry.swift */; };
+		C8ED8E1E2B1782EB0050EB8A /* JournalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E1D2B1782EB0050EB8A /* JournalListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C8ED8E0A2B173F4B0050EB8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8ED8E0D2B173F4B0050EB8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8ED8E0F2B173F4B0050EB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8ED8E1B2B177F9D0050EB8A /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		C8ED8E1D2B1782EB0050EB8A /* JournalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +62,39 @@
 			children = (
 				C8ED8E012B173F490050EB8A /* AppDelegate.swift */,
 				C8ED8E032B173F490050EB8A /* SceneDelegate.swift */,
-				C8ED8E052B173F490050EB8A /* JournalListViewController.swift */,
+				C8ED8E182B177F6A0050EB8A /* Journal List Screen */,
 				C8ED8E072B173F490050EB8A /* Main.storyboard */,
 				C8ED8E0A2B173F4B0050EB8A /* Assets.xcassets */,
 				C8ED8E0C2B173F4B0050EB8A /* LaunchScreen.storyboard */,
 				C8ED8E0F2B173F4B0050EB8A /* Info.plist */,
 			);
 			path = MyJournal;
+			sourceTree = "<group>";
+		};
+		C8ED8E182B177F6A0050EB8A /* Journal List Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED8E1A2B177F830050EB8A /* View */,
+				C8ED8E192B177F7A0050EB8A /* Model */,
+				C8ED8E052B173F490050EB8A /* JournalListViewController.swift */,
+			);
+			path = "Journal List Screen";
+			sourceTree = "<group>";
+		};
+		C8ED8E192B177F7A0050EB8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED8E1B2B177F9D0050EB8A /* JournalEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8ED8E1A2B177F830050EB8A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C8ED8E1D2B1782EB0050EB8A /* JournalListTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +170,8 @@
 			files = (
 				C8ED8E062B173F490050EB8A /* JournalListViewController.swift in Sources */,
 				C8ED8E022B173F490050EB8A /* AppDelegate.swift in Sources */,
+				C8ED8E1C2B177F9D0050EB8A /* JournalEntry.swift in Sources */,
+				C8ED8E1E2B1782EB0050EB8A /* JournalListTableViewCell.swift in Sources */,
 				C8ED8E042B173F490050EB8A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
