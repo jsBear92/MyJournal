@@ -200,7 +200,7 @@
         <!--Map-->
         <scene sceneID="PBk-s9-Jm9">
             <objects>
-                <viewController id="zhC-yt-fVi" sceneMemberID="viewController">
+                <viewController id="zhC-yt-fVi" customClass="MapViewController" customModule="MyJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p4Q-dP-MYe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,6 +220,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="DJz-XT-WAW"/>
+                    <connections>
+                        <outlet property="mapView" destination="Svg-4V-DuJ" id="ix2-lm-3hd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCC-XI-4mb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
