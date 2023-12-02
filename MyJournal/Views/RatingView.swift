@@ -22,6 +22,7 @@ class RatingView: UIStackView {
     // MARK: - Initialization
     required init(coder: NSCoder) {
         super.init(coder: coder)
+        setupButtons()
     }
     
     // MARK: - Private methods
