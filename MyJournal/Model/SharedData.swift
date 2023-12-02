@@ -62,4 +62,9 @@ class SharedData {
             print("Failed to write JSON data: \(error.localizedDescription)")
         }
     }
+    func removeSelectedJournalEntry(_ selectedJournalEntry: JournalEntry) {
+        journalEntries.removeAll{
+            $0.key == selectedJournalEntry.key
+        }
+    }
 }
