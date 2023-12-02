@@ -18,7 +18,7 @@
 		C8ED8E0B2B173F4B0050EB8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8ED8E0A2B173F4B0050EB8A /* Assets.xcassets */; };
 		C8ED8E0E2B173F4B0050EB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8ED8E0C2B173F4B0050EB8A /* LaunchScreen.storyboard */; };
 		C8ED8E1C2B177F9D0050EB8A /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E1B2B177F9D0050EB8A /* JournalEntry.swift */; };
-		C8ED8E1E2B1782EB0050EB8A /* JournalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E1D2B1782EB0050EB8A /* JournalListTableViewCell.swift */; };
+		C8ED8E1E2B1782EB0050EB8A /* JournalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E1D2B1782EB0050EB8A /* JournalListCollectionViewCell.swift */; };
 		C8ED8E222B19A37B0050EB8A /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E212B19A37A0050EB8A /* AddJournalEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		C8ED8E0D2B173F4B0050EB8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8ED8E0F2B173F4B0050EB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8ED8E1B2B177F9D0050EB8A /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
-		C8ED8E1D2B1782EB0050EB8A /* JournalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewCell.swift; sourceTree = "<group>"; };
+		C8ED8E1D2B1782EB0050EB8A /* JournalListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8ED8E212B19A37A0050EB8A /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +122,7 @@
 		C8ED8E1A2B177F830050EB8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C8ED8E1D2B1782EB0050EB8A /* JournalListTableViewCell.swift */,
+				C8ED8E1D2B1782EB0050EB8A /* JournalListCollectionViewCell.swift */,
 				C803FD4E2B1B70F0007A8FC2 /* RatingView.swift */,
 			);
 			path = Views;
@@ -212,7 +212,7 @@
 				C8ED8E022B173F490050EB8A /* AppDelegate.swift in Sources */,
 				C803FD4F2B1B70F0007A8FC2 /* RatingView.swift in Sources */,
 				C8ED8E1C2B177F9D0050EB8A /* JournalEntry.swift in Sources */,
-				C8ED8E1E2B1782EB0050EB8A /* JournalListTableViewCell.swift in Sources */,
+				C8ED8E1E2B1782EB0050EB8A /* JournalListCollectionViewCell.swift in Sources */,
 				C8ED8E042B173F490050EB8A /* SceneDelegate.swift in Sources */,
 				C8ED8E222B19A37B0050EB8A /* AddJournalEntryViewController.swift in Sources */,
 				C803FD442B1B2A52007A8FC2 /* JournalEntryDetailViewController.swift in Sources */,
@@ -371,10 +371,14 @@
 				DEVELOPMENT_TEAM = D3A53M6A2K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyJournal/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses your camera when creating journal entries";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location for journal entries";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location for journal entries";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photos in your photo library when creating journal entries";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,10 +403,14 @@
 				DEVELOPMENT_TEAM = D3A53M6A2K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyJournal/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses your camera when creating journal entries";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location for journal entries";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location for journal entries";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photos in your photo library when creating journal entries";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

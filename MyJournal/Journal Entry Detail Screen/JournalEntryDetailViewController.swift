@@ -51,17 +51,4 @@ class JournalEntryDetailViewController: UITableViewController {
             self.mapImageView.image = nil
         }
     }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        guard segue.identifier == "entryDetail" else {
-            return
-        }
-        guard let journalEntryDetailViewController = segue.destination as? JournalEntryDetailViewController, let selectedJournalEntryCell = sender as? JournalListTableViewCell, let indexPath = tableView.indexPath(for: selectedJournalEntryCell) else {
-            fatalError("Could not get indexPath")
-        }
-        selectedJournalEntry = SharedData.shard.getJournalEntry(index: indexPath.row)
-        journalEntryDetailViewController.selectedJournalEntry = selectedJournalEntry
-    }
 }
