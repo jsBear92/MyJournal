@@ -12,6 +12,7 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        SharedData.shard.loadJournalEntriesData()
     }
     
     // MARK: - UITableViewDataSource
@@ -22,8 +23,10 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let journalCell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! JournalListTableViewCell
         let journalEntry = SharedData.shard.getJournalEntry(index: indexPath.row)
-        journalCell.photoImageView.image = journalEntry.photo
-        journalCell.dateLabel.text = journalEntry.date.formatted(.dateTime.day().month().year())
+        if let photoData = journalEntry.photoData {
+            journalCell.photoImageView.image = UIImage(data: photoData)
+        }
+        journalCell.dateLabel.text = journalEntry.dateString
         journalCell.titleLabel.text = journalEntry.entryTitle
         return journalCell
     }
@@ -32,6 +35,7 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             SharedData.shard.removeJournalEntry(index: indexPath.row)
+            SharedData.shard.saveJournalEntriesData()
             tableView.reloadData()
         }
     }
@@ -47,6 +51,7 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
             AddJournalEntryViewController, let newJournalEntry =
             sourceViewController.newJournalEntry {
             SharedData.shard.addJournalEntry(newJournalEntry: newJournalEntry)
+            SharedData.shard.saveJournalEntriesData()
             tableView.reloadData()
         }
     }
