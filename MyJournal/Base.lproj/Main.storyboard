@@ -222,6 +222,7 @@
                     <navigationItem key="navigationItem" title="Map" id="DJz-XT-WAW"/>
                     <connections>
                         <outlet property="mapView" destination="Svg-4V-DuJ" id="ix2-lm-3hd"/>
+                        <segue destination="ydQ-8A-w8Z" kind="show" identifier="showMapDetail" id="ize-Lc-JZU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCC-XI-4mb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -231,7 +232,7 @@
         <!--Entry Detail-->
         <scene sceneID="WES-Qw-MFh">
             <objects>
-                <tableViewController id="ydQ-8A-w8Z" customClass="JournalEntryDetailViewcontroller" customModule="MyJournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ydQ-8A-w8Z" customClass="JournalEntryDetailViewController" customModule="MyJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fVZ-ik-LYY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -476,6 +477,9 @@
             <point key="canvasLocation" x="2771.7557251908397" y="-8.4507042253521139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ize-Lc-JZU"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="face.smiling" catalog="system" width="128" height="123"/>
         <image name="map" catalog="system" width="128" height="112"/>

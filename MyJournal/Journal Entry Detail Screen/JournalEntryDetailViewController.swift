@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JournalEntryDetailViewcontroller: UITableViewController {
+class JournalEntryDetailViewController: UITableViewController {
 
     // MARK: - Properties
     @IBOutlet var dateLabel: UILabel!
@@ -33,7 +33,7 @@ class JournalEntryDetailViewcontroller: UITableViewController {
         guard segue.identifier == "entryDetail" else {
             return
         }
-        guard let journalEntryDetailViewController = segue.destination as? JournalEntryDetailViewcontroller, let selectedJournalEntryCell = sender as? JournalListTableViewCell, let indexPath = tableView.indexPath(for: selectedJournalEntryCell) else {
+        guard let journalEntryDetailViewController = segue.destination as? JournalEntryDetailViewController, let selectedJournalEntryCell = sender as? JournalListTableViewCell, let indexPath = tableView.indexPath(for: selectedJournalEntryCell) else {
             fatalError("Could not get indexPath")
         }
         let selectedJournalEntry = sampleJournalEntryData.journalEntries[indexPath.row]

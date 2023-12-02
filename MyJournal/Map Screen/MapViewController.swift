@@ -15,6 +15,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var sampleJournalEntryData = SampleJournalEntryData()
+    var selectedJournalEntry: JournalEntry?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,16 +65,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         return nil
     }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let annotation = mapView.selectedAnnotations.first else {
+            return
+        }
+        selectedJournalEntry = annotation as? JournalEntry
+        self.performSegue(withIdentifier: "showMapDetail", sender: self)
+    }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "showMapDetail" else {
+            fatalError("Unexpected segue identifier")
+        }
+        guard let entryDetailViewcontroller = segue.destination as? JournalEntryDetailViewController else {
+            fatalError("Unexpected view controller")
+        }
+        entryDetailViewcontroller.selectedJournalEntry = selectedJournalEntry
     }
-    */
 
 }
