@@ -63,7 +63,7 @@
                                             <outlet property="dateLabel" destination="wXc-hT-0wR" id="EIe-Cz-Wea"/>
                                             <outlet property="photoImageView" destination="0du-DF-swf" id="o3w-g8-FL6"/>
                                             <outlet property="titleLabel" destination="LAc-z8-Eer" id="HgT-fq-j8M"/>
-                                            <segue destination="ydQ-8A-w8Z" kind="show" id="IvK-8g-6FE"/>
+                                            <segue destination="ydQ-8A-w8Z" kind="show" identifier="entryDetail" id="IvK-8g-6FE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -223,7 +223,7 @@
         <!--Entry Detail-->
         <scene sceneID="WES-Qw-MFh">
             <objects>
-                <tableViewController id="ydQ-8A-w8Z" sceneMemberID="viewController">
+                <tableViewController id="ydQ-8A-w8Z" customClass="JournalEntryDetailViewcontroller" customModule="MyJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fVZ-ik-LYY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -381,6 +381,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Entry Detail" id="5b0-uI-1kd"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="PBX-rD-yfa" id="oah-ch-nyp"/>
+                        <outlet property="dateLabel" destination="Ktm-nl-Wul" id="JOg-GY-sYk"/>
+                        <outlet property="photoImageView" destination="u2S-EA-VWM" id="sg9-qM-iEH"/>
+                        <outlet property="titleLabel" destination="X47-ab-u6t" id="TSY-hR-VRa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3j-ym-7eQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
