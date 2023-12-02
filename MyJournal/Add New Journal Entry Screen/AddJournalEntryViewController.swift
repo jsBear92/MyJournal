@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, CLLocationManagerDelegate {
+class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Properties
     @IBOutlet var titleTextField: UITextField!
@@ -109,5 +109,30 @@ class AddJournalEntryViewController: UIViewController, UITextFieldDelegate, UITe
         } else {
             saveButton.isEnabled = !textFieldText.isEmpty && !textViewText.isEmpty
         }
+    }
+    
+    @IBAction func getPhoto(_ sender: UITapGestureRecognizer) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        #if targetEnvironment(simulator)
+        imagePickerController.sourceType = .photoLibrary
+        #else
+        imagePickerController.sourceType = .camera
+        imagePickerController.showsCameraControls = true
+        #endif
+        present(imagePickerController, animated: true)
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        let smallerImage = selectedImage.preparingThumbnail(of: CGSize(width: 300, height: 300))
+        photoImageView.image = smallerImage
+        dismiss(animated: true)
     }
 }
