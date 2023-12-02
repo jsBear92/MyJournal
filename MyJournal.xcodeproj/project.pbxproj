@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C803FD442B1B2A52007A8FC2 /* JournalEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803FD432B1B2A52007A8FC2 /* JournalEntryDetailViewController.swift */; };
 		C803FD472B1B3DA0007A8FC2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803FD462B1B3DA0007A8FC2 /* MapViewController.swift */; };
+		C803FD4D2B1B689A007A8FC2 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803FD4C2B1B689A007A8FC2 /* SharedData.swift */; };
 		C8ED8E022B173F490050EB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E012B173F490050EB8A /* AppDelegate.swift */; };
 		C8ED8E042B173F490050EB8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E032B173F490050EB8A /* SceneDelegate.swift */; };
 		C8ED8E062B173F490050EB8A /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED8E052B173F490050EB8A /* JournalListViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		C803FD432B1B2A52007A8FC2 /* JournalEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryDetailViewController.swift; sourceTree = "<group>"; };
 		C803FD462B1B3DA0007A8FC2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C803FD4C2B1B689A007A8FC2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		C8ED8DFE2B173F490050EB8A /* MyJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ED8E012B173F490050EB8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8ED8E032B173F490050EB8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				C8ED8E202B19A33A0050EB8A /* Add New Journal Entry Screen */,
 				C8ED8E012B173F490050EB8A /* AppDelegate.swift */,
 				C8ED8E032B173F490050EB8A /* SceneDelegate.swift */,
+				C8ED8E192B177F7A0050EB8A /* Model */,
 				C8ED8E182B177F6A0050EB8A /* Journal List Screen */,
 				C8ED8E072B173F490050EB8A /* Main.storyboard */,
 				C8ED8E0A2B173F4B0050EB8A /* Assets.xcassets */,
@@ -100,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				C8ED8E1A2B177F830050EB8A /* View */,
-				C8ED8E192B177F7A0050EB8A /* Model */,
 				C8ED8E052B173F490050EB8A /* JournalListViewController.swift */,
 			);
 			path = "Journal List Screen";
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				C8ED8E1B2B177F9D0050EB8A /* JournalEntry.swift */,
+				C803FD4C2B1B689A007A8FC2 /* SharedData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C803FD4D2B1B689A007A8FC2 /* SharedData.swift in Sources */,
 				C8ED8E062B173F490050EB8A /* JournalListViewController.swift in Sources */,
 				C8ED8E022B173F490050EB8A /* AppDelegate.swift in Sources */,
 				C8ED8E1C2B177F9D0050EB8A /* JournalEntry.swift in Sources */,

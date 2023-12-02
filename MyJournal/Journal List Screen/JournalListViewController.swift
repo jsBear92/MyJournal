@@ -10,21 +10,18 @@ import UIKit
 class JournalListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Properties
     @IBOutlet var tableView: UITableView!
-    var sampleJournalEntryData = SampleJournalEntryData()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        sampleJournalEntryData.createSampleJournalEntryData()
     }
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sampleJournalEntryData.journalEntries.count
+        SharedData.shard.numberOfJournalEntries()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let journalCell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as! JournalListTableViewCell
-        let journalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        let journalEntry = SharedData.shard.getJournalEntry(index: indexPath.row)
         journalCell.photoImageView.image = journalEntry.photo
         journalCell.dateLabel.text = journalEntry.date.formatted(.dateTime.day().month().year())
         journalCell.titleLabel.text = journalEntry.entryTitle
@@ -34,7 +31,7 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            sampleJournalEntryData.journalEntries.remove(at: indexPath.row)
+            SharedData.shard.removeJournalEntry(index: indexPath.row)
             tableView.reloadData()
         }
     }
@@ -49,7 +46,7 @@ class JournalListViewController: UIViewController, UITableViewDataSource, UITabl
         if let sourceViewController = segue.source as?
             AddJournalEntryViewController, let newJournalEntry =
             sourceViewController.newJournalEntry {
-            sampleJournalEntryData.journalEntries.append(newJournalEntry)
+            SharedData.shard.addJournalEntry(newJournalEntry: newJournalEntry)
             tableView.reloadData()
         }
     }

@@ -16,7 +16,6 @@ class JournalEntryDetailViewController: UITableViewController {
     @IBOutlet var bodyTextView: UITextView!
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var mapImageView: UIImageView!
-    var sampleJournalEntryData = SampleJournalEntryData()
     var selectedJournalEntry: JournalEntry?
     
     override func viewDidLoad() {
@@ -60,7 +59,7 @@ class JournalEntryDetailViewController: UITableViewController {
         guard let journalEntryDetailViewController = segue.destination as? JournalEntryDetailViewController, let selectedJournalEntryCell = sender as? JournalListTableViewCell, let indexPath = tableView.indexPath(for: selectedJournalEntryCell) else {
             fatalError("Could not get indexPath")
         }
-        let selectedJournalEntry = sampleJournalEntryData.journalEntries[indexPath.row]
+        let selectedJournalEntry = SharedData.shard.getJournalEntry(index: indexPath.row)
         journalEntryDetailViewController.selectedJournalEntry = selectedJournalEntry
     }
 }
