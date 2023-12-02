@@ -9,11 +9,12 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     // MARK: - Properties
     @IBOutlet var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    var sampleJournalEntryData = SampleJournalEntryData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         self.navigationItem.title = "Loading..."
         locationManager.requestLocation()
+        mapView.delegate = self
+        sampleJournalEntryData.createSampleJournalEntryData()
+        mapView.addAnnotations(sampleJournalEntryData.journalEntries)
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +45,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
+    }
+    
+    // MARK: -MKMapViewDelegate
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "mapAnnotation"
+        if annotation is JournalEntry {
+            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
+                annotationView.annotation = annotation
+                return annotationView
+            } else {
+                let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView.canShowCallout = true
+                let calloutButton = UIButton(type: .detailDisclosure)
+                annotationView.rightCalloutAccessoryView = calloutButton
+                return annotationView
+            }
+        }
+        return nil
     }
     
 
